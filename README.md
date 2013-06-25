@@ -2,6 +2,7 @@ conditional-stream
 =========================================
 conditional-stream is a duplex stream that only passes data when a set function returns true
 
+[![build status](https://secure.travis-ci.org/swang/conditional-stream.png)](http://travis-ci.org/swang/conditiona-stream)
 
 ## requirements
 
