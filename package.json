@@ -1,0 +1,28 @@
+{
+  "name": "conditional-stream",
+  "version": "0.0.1",
+  "description": "A duplex stream that only passes data through when a set function returns true",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/.bin/tape test.js",
+    "lint": "node_modules/.bin/jshint --config jshint.json *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/swang/conditional-stream.git"
+  },
+  "keywords": [
+    "streams2",
+    "conditional-stream",
+    "stream"
+  ],
+  "devDependencies": {
+    "tape": "1.0.x",
+    "jshint": "2.1.x"
+  },
+  "bugs": {
+    "url" : "http://github.com/swang/conditiona-stream/issues"
+  },
+  "author": "Shuan Wang",
+  "license": "MIT"
+}
