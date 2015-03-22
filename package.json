@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/tape test.js",
-    "lint": "node_modules/.bin/jshint --config jshint.json *.js"
+    "lint": "node_modules/.bin/jshint --config .jshintrc *.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   ],
   "devDependencies": {
     "tape": "1.0.x",
-    "jshint": "2.1.x"
+    "jshint": "^2.0.0"
   },
   "bugs": {
     "url" : "http://github.com/swang/conditiona-stream/issues"

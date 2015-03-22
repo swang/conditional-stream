@@ -12,5 +12,6 @@
   "indent": 2,
   "asi": true,
   "laxcomma": true,
-  "trailing": true
+  "trailing": true,
+  "esnext": true
 }
