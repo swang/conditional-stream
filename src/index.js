@@ -4,11 +4,11 @@ var { Duplex: duplex } = require('stream')
 
 export default class ConditionalStream extends duplex {
   constructor(condFunc, opts) {
+    super(opts);
+
     if (!(this instanceof ConditionalStream)) {
       return new ConditionalStream(condFunc, opts);
     }
-
-    super(opts)
 
     if (typeof condFunc !== 'function') {
       throw new Error('Must pass a function as first parameter')
