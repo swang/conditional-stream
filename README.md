@@ -17,8 +17,11 @@ to filter/limit a stream to only numbers
 
 **onlyNumbers.js**
 ```js
-var CondStream = require('conditional-stream')
-  , cond = new CondStream(function(input) {
+var CondStream = require('./index')
+  , cond
+
+cond = new CondStream(function(input) {
+  // return true if input string is of type Number
   return (!isNaN(Number(input.toString())))
 })
 
