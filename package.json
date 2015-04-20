@@ -1,11 +1,12 @@
 {
   "name": "conditional-stream",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A duplex stream that only passes data through when a set function returns true",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/tape test.js",
-    "lint": "node_modules/.bin/jshint --config .jshintrc *.js"
+    "test": "npm run-script lint && node_modules/.bin/tape test/test.js",
+    "lint": "node_modules/.bin/jscs --esnext --config .jscsrc src/*.js && node_modules/.bin/jshint --config .jshintrc src/*.js",
+    "build": "babel src/index.js -o ./lib/index.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,9 @@
     "stream"
   ],
   "devDependencies": {
-    "tape": "1.0.x",
-    "jshint": "^2.0.0"
+    "tape": "4.0.x",
+    "jshint": "^2.0.0",
+    "jscs": "^1.12.0"
   },
   "bugs": {
     "url" : "http://github.com/swang/conditiona-stream/issues"
