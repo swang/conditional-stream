@@ -1,6 +1,6 @@
 'use strict';
 
-var CondStream = require('./index')
+var CondStream = require('../lib/index')
   , inherits = require('util').inherits
   , Writable = require('stream').Writable
   , tape = require('tape')
@@ -10,14 +10,20 @@ var CondStream = require('./index')
 function TestStream(opts) {
   Writable.call(this, opts)
 }
+
 inherits(TestStream, Writable)
+
 TestStream.prototype._write = function(chunk, enc, cb) {
   this.emit('test', chunk)
   cb()
 }
 
+function testConditional(input) {
+  return !isNaN(Number(input.toString()))
+}
+
 cond = new CondStream(function(input) {
-  return (!isNaN(Number(input.toString())))
+  return testConditional(input);
 })
 
 test = new TestStream()
@@ -34,6 +40,6 @@ tape('basic test', function(t) {
 
   t.plan(3)
   test.on('test', function(cnt) {
-    t.ok(!isNaN(Number(cnt.toString())), cnt.toString() + ' is a number')
+    t.ok(testConditional(cnt), cnt.toString() + ' is a number')
   })
 })
